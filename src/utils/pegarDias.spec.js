@@ -3,11 +3,20 @@ const pegarDias = require("./pegarDias.js")
 describe("pegarDias", () => {
 
 	it("Recebe uma string no formato DD/MM/YYYY e converte em um array de string ", () => {
-		expect(pegarDias("17/07/2018", "20/07/2018")).toEqual(["17/07/2018","18/07/2018","19/07/2018","20/07/2018"])
+		const actual = pegarDias("17/07/2018", "20/07/2018")
+		const expected = ["17/07/2018","18/07/2018","19/07/2018","20/07/2018"]
+		expect(actual).toEqual(expected)
 	})
 
-	it("Recebe uma string no formato DD/MM/YYYY e converte em um array de string ", () => {
-		expect(pegarDias("17/07/2018", "20/07/2018")).toEqual([17,7,2018],[20,7,2018])
+	it("recebe coisas erradas e da erro",() => {
+		const fn = ()=> pegarDias("17/07/2018")
+		expect(fn).toThrow()
 	})
 
+	it("recebe um nada e da erro",() => {
+		const fn = ()=> pegarDias()
+		expect(fn).toThrow()
+	})
 })
+
+

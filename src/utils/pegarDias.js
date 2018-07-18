@@ -1,3 +1,5 @@
+const toDate = require('./toDate.js')
+const fromDate = require('./fromDate.js')
 
 /**
  * Retorna uma lista de datas entre o início (inclusivo) e fim (inclusivo)
@@ -7,6 +9,21 @@
  * @returns {Array<string>} Datas nesse intervalo, no padrão DD/MM/YYYY
  */
 const pegarDias = (inicio, fim) => {
-	
+	if (typeof inicio !== 'string' || typeof fim !== 'string') throw new Error('Argumentos inválidos')
+
+	const inicioDate = toDate(inicio)
+	const fimDate = toDate(fim)
+	const datas = [inicio]
+	let data = inicio
+
+	while(data !== fim) {
+		const date = toDate(data)
+		date.setDate(date.getDate() + 1)
+		data = fromDate(date)
+		datas.push(data)
+	}
+
+	return datas
 }
+
 module.exports = pegarDias
