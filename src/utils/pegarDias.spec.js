@@ -1,4 +1,4 @@
-const pegarDias = require("./pegarDias.js")
+const pegarDias = require("./pegarDias")
 
 describe("pegarDias", () => {
 

@@ -1,4 +1,4 @@
-const toDate = require('./toDate.js')
+const toDate = require('./toDate')
 
 /**
  * Verifica se tem role com o mozão nessa data.

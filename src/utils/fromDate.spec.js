@@ -1,4 +1,4 @@
-const fromDate = require("./fromDate.js")
+const fromDate = require("./fromDate")
 
 describe('fromDate', () => {
 

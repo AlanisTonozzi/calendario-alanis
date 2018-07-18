@@ -1,4 +1,4 @@
-const temRole = require("./temrole.js")
+const temRole = require("./temRole")
 
 describe("temRole", () =>{
 

@@ -1,5 +1,5 @@
 const express = require('express') 
-const utils = require('./utils.js')
+const utils = require('./utils')
 
 const server = express() //cria servidor
 
@@ -19,8 +19,11 @@ server.use('/ping', (req,res) => {
 })
 
 server.use("/ultimos-30",(req,res) => {
-	const hoje = '16/07/2018'
-	const trintaAtras = '16/06/2018'
+	const hoje = utils.fromDate(new Date())
+	const trintaAtrasDate = new Date()
+	trintaAtrasDate.setDate((new Date()).getDate() - 30)
+	const trintaAtras = utils.fromDate(trintaAtrasDate)
+
 	const roles = utils.datasComRole(trintaAtras, hoje)
 	const data = { data: roles }
 

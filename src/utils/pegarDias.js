@@ -1,5 +1,5 @@
-const toDate = require('./toDate.js')
-const fromDate = require('./fromDate.js')
+const toDate = require('./toDate')
+const fromDate = require('./fromDate')
 
 /**
  * Retorna uma lista de datas entre o início (inclusivo) e fim (inclusivo)
